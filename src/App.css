@@ -1,0 +1,202 @@
+:root {
+  --bg-edge: #2e0a08;
+  --bg-mid: #7a1712;
+  --bg-core: #c7291d;
+  --card: #d92e21;
+  --card-edge: #a81f16;
+  --paper: #fffaf0;
+  --ink: #3a140c;
+  --outline: #5c0f08;
+  --gold: #ffcf4d;
+  --gold-edge: #b8791a;
+  --whatsapp: #25d366;
+  --pin: #e6482e;
+  --tiktok: #1c1c1c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 18px;
+  font-family: "Nunito", "Segoe UI", sans-serif;
+  background: radial-gradient(120% 90% at 50% 0%, var(--bg-core) 0%, var(--bg-mid) 55%, var(--bg-edge) 100%);
+  color: var(--ink);
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(180deg, var(--card), var(--card-edge));
+  border-radius: 28px;
+  padding: 34px 24px 30px;
+  box-shadow: 0 24px 50px -18px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0.001;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mascot {
+  display: block;
+  margin: 0 auto 6px;
+}
+
+.logo {
+  text-align: center;
+  font-family: "Fredoka", sans-serif;
+  line-height: 0.92;
+  margin: 0 0 18px;
+}
+.logo .de {
+  display: block;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--paper);
+  -webkit-text-stroke: 1.5px var(--outline);
+  letter-spacing: 0.04em;
+}
+.logo .ocana {
+  display: block;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--paper);
+  -webkit-text-stroke: 2px var(--outline);
+  text-shadow: 0 4px 0 var(--outline);
+  margin: 2px 0;
+  text-wrap: balance;
+}
+.logo .lindo {
+  display: inline-block;
+  font-size: 34px;
+  font-weight: 600;
+  color: var(--gold);
+  -webkit-text-stroke: 1.5px var(--gold-edge);
+  text-shadow: 0 3px 0 var(--gold-edge);
+  transform: rotate(-4deg);
+  margin-top: 4px;
+}
+
+.welcome {
+  text-align: center;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--paper);
+  text-shadow: 0 2px 0 var(--outline);
+  margin: 0 0 20px;
+}
+
+.group-label {
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 250, 240, 0.75);
+  margin: 18px 4px 8px;
+}
+.group-label:first-of-type {
+  margin-top: 4px;
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--paper);
+  border: 2px solid var(--outline);
+  border-radius: 999px;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 3px 0 var(--outline);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--outline);
+}
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 var(--outline);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.icon {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon svg {
+  width: 17px;
+  height: 17px;
+}
+.icon.whatsapp {
+  background: var(--whatsapp);
+}
+.icon.instagram {
+  background: radial-gradient(circle at 30% 110%, #ffdb73 0%, #fd5949 30%, #d6249f 55%, #285aeb 90%);
+}
+.icon.tiktok {
+  background: var(--tiktok);
+}
+.icon.pin {
+  background: var(--pin);
+}
+
+.btn-label {
+  flex: 1;
+  text-align: center;
+  margin-right: 30px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 250, 240, 0.7);
+  text-transform: uppercase;
+}
